@@ -3,10 +3,60 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Ejercicio 1</title>
-
+<style>
+  body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  div#content{
+    display: flex;
+    flex-flow: row wrap;
+  }
+  div#header, div#footer{
+    color: rgb(197, 197, 0);
+    background-color: darkblue;
+    border: 2px solid darkred;
+  }
+  div#header{
+    flex: 100%;
+    margin-bottom: 10px;
+    height: 8em;
+  }
+  div#nav{
+    flex: 1;
+    margin: 10px 20px 10px 0;
+    border-top: 2px solid darkred;
+    border-bottom: 2px solid darkred;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  ul{
+    margin: 0;
+    padding: 15px 0;
+    background-color: black;
+  }
+  li{
+    border: 1px solid grey;
+    background-color: darkgrey;
+    padding-bottom: 1em;
+    text-align: center;
+}
+  div#contentinner{
+    flex: 12;
+    margin: 10px 0 10px 20px;
+    border-top: 2px solid darkred;
+    border-bottom: 2px solid darkred;
+    height: 500px;
+  }
+  div#footer{
+    margin-top: 10px;
+    height: 5em;
+  }
+</style>
 </head>
 <body>
-
+  
 <div id="content"> 
   <div id="header">2 column Layout with equalising Columns
   	<p>Either column can be the longest and the footer will stay at the bottom of the window (or bottom of the document if longer)</p></div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1a csstp5</title>
+    <style>
+        #contenedor{
+            display: flex;
+            flex-direction: row;
+        }
+        .visible{
+            border: 5px solid darkgray;
+            background-color: gray;
+            padding: 1em;
+        }
+        .contenido{
+            height: 500px;
+        }
+        #izquierda, #derecha{
+            flex: 10%;
+            margin: 5px 10px
+        }
+        #centro{
+            flex: 68%;
+            text-align: center;
+            margin: 5px 5px
+        }
+        #top{
+            margin: 5px 1em;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="visible" id="top">Top</div>
+    <div id="contenedor">
+        <div class="visible contenido" id="izquierda">Izquierda</div>
+        <div class="visible contenido" id="centro">Centro</div>
+        <div class="visible contenido" id="derecha">Derecha</div>
+    </div>
+
+</body>
+</html>
