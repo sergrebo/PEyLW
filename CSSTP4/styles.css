@@ -1,0 +1,24 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: sans, "lucida grande", tahoma, verdana, sans-serif;
+    font-size: 11px;
+    background-color: white;
+    color: black;
+}
+#container{
+    display: flex;
+    flex-flow: row wrap;
+}
+#intro{
+    flex: 80%;
+    order: 1;
+}
+#supportingText{
+    flex: 80%;
+    order: 1;
+}
+#linkList{
+    flex: 20%;
+    order: 0;
+}
