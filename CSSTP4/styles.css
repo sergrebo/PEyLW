@@ -7,18 +7,70 @@ body{
     color: black;
 }
 #container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+#intro{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+#supportingText{
+    grid-column-start: 2;
+}
+#linkList{
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+#pageHeader h1{
+    padding: 10px;
+    border: 1px solid black;
+    text-indent: -9999px;
+    background-color: #ddd;
+    background-image: url("css_zen_garden.gif");
+    background-repeat: no-repeat;
+    background-position-x: left 10px;
+    background-position-y: top 10px;
+}
+#pageHeader h2{
+    position: relative;
+    top: -10px;
+    border: 1px solid grey;
+    padding: 15px;
+    background-image: url(zen_h2_back.gif);
+    background-position: top;
+    background-color: #498AED;
+    background-repeat: repeat-x;
+}
+#lresources{
+    background-color: #9fc;
+}
+#lresources ul{
+    list-style-type: none;
+}
+#lresources a{
+    text-decoration: none;
+    color: #036;
+    font-weight: bold;
+}
+#lresources a:hover{
+    background-color: #036;
+    color: #9fc
+}
+#larchives ul{
     display: flex;
     flex-flow: row wrap;
 }
-#intro{
-    flex: 80%;
+#larchives li:first-child {
     order: 1;
+    flex: 1 1 50%;
 }
-#supportingText{
-    flex: 80%;
-    order: 1;
-}
-#linkList{
-    flex: 20%;
+#larchives li:nth-child(2){
     order: 0;
+    flex: 1 1 50%;
+}
+#larchives li:last-child{
+    order: 3;
+}
+#lselect ul {
+    list-style-image: url(blue_bullet.gif);
 }
