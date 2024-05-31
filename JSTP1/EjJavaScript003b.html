@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglo</title>
+</head>
+<body>
+    <h1>Datos Personales</h1>
+    <script type="text/javascript">
+        var datosPersonales=[
+            'Nombre: Emiliano',
+            'Apellido: Rebolledo',
+            'Estado civil: Soltero',
+            'Edad: 35',
+            'Fecha de nacimiento: 24/06/1988',
+            'DNI: 33823405'
+        ]
+        for (let posicion = 0; posicion < datosPersonales.length; posicion++) {
+            document.write(datosPersonales[posicion]+'<br>');
+        }
+        datosPersonales.forEach(function(elemento){
+            document.write(elemento+'<br>');
+        });
+    </script>
+</body>
+</html>
+//Ss
