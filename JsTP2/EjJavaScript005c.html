@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor monetario</title>
+    <script>
+        function cambiarMoneda($cambio) {
+            let $resultado
+            let $peso
+            let $dolar
+            let $real
+            let $euro
+            switch ($cambio) {
+                case pesodolar:
+                    $peso=document.getElementById('pesodolar').value
+                    $peso=Number($peso)
+                    $resultado=$peso/1200
+                    document.getElementById('dolarpeso').value=$resultado
+                    break;
+                
+                case dolarpeso:
+                    $dolar=document.getElementById('dolarpeso').value
+                    $dolar=Number($dolar)
+                    $resultado=$dolar*1200
+                    document.getElementById('pesodolar').value=$resultado
+                    break
+                
+                case pesoreal:
+                    $peso=document.getElementById('pesoreal').value
+                    $peso=Number($peso)
+                    $resultado=$peso/170
+                    document.getElementById('realpeso').value=$resultado
+                    break
+                
+                case realpeso:
+                    $real=document.getElementById('realpeso').value
+                    $real=Number($real)
+                    $resultado=$real*170
+                    document.getElementById('pesoreal').value=$resultado
+                    break
+                
+                case pesoeuro:
+                    $peso=document.getElementById('pesoeuro').value
+                    $peso=Number($peso)
+                    $resultado=$peso/970
+                    document.getElementById('europeso').value=$resultado
+                    break
+                
+                case europeso:
+                    $euro=document.getElementById('europeso').value
+                    $euro=Number($euro)
+                    $resultado=$euro*970
+                    document.getElementById('pesoeuro').value=$resultado
+                    break
+
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h2>Cambio peso-dolar</h2>
+    <form action="">
+        <label for="peso">PESO</label><input type="number" name="peso" oninput="cambiarMoneda(pesodolar)" id="pesodolar">----------<input type="number" name="dolar" oninput="cambiarMoneda(dolarpeso)" id="dolarpeso"><label for="dolar">DOLAR</label>
+    </form>
+    
+    <h2>Cambio peso-real</h2>
+    <form action="">
+        <label for="peso">PESO</label><input type="number" name="peso" oninput="cambiarMoneda(pesoreal)" id="pesoreal">----------<input type="number" name="real" oninput="cambiarMoneda(realpeso)" id="realpeso"><label for="real">REAL</label>
+    </form>
+
+    <h2>Cambio peso-euro</h2>
+    <form action="">
+        <label for="peso">PESO</label><input type="number" name="peso" oninput="cambiarMoneda(pesoeuro)" id="pesoeuro">----------<input type="number" name="euro" oninput="cambiarMoneda(europeso)" id="europeso"><label for="euro">EURO</label>
+    </form>
+</body>
+</html>
