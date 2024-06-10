@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Albertus';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/AlbertusMTStd.woff') format('woff');
+}
+body{
+    font-family: 'Albertus', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.carousel{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+.carousel-interno{
+    display: flex;
+    transition: transform 0.5 ease-in-out;
+}
+.carousel-item{
+    min-width: 100%;
+    box-sizing: content-box;
+}
+.carousel-item img{
+    width: 100%;
+    display: block;
+}
+.carousel-control{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+}
+.nav-button.prev{
+    left: 10px;
+}
+.nav-button.sig{
+    right: 10px;
+}
+.nav-button:hover{
+    background-color: #005f5f;
+}
+#logo{
+    color: #2c3e50;
+    text-decoration: none;
+}
+#logotext{
+    font-size: 34px;
+}
