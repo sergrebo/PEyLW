@@ -1,23 +1,32 @@
+/* Inclusión de nueva fuente */
 @font-face {
     font-family: 'Albertus';
     font-style: normal;
     font-weight: normal;
     src: url('../fonts/AlbertusMTStd.woff') format('woff');
 }
+
+/* Estilos generales */
 body{
     font-family: 'Albertus', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F5F5DC;
 }
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos encabezado */
 header{
-    width: 100%;
-    display: flex;
     position: fixed;
     z-index: 99;
-    background-color: white;
-    flex-wrap: wrap;
     background-color: #2C3E50;
+    width: 100%;
+}
+.header-top{
+    display: flex;
 }
 header a{
     display: flex;
@@ -25,6 +34,10 @@ header a{
     align-items: center;
     text-decoration: none;
     color: #F1C40F;
+}
+header nav{
+    display: flex;
+    justify-content: space-around;
 }
 .container-logo{
     width: 70%;
@@ -41,6 +54,8 @@ header a{
 #logotext{
     font-size: 34px;
 }
+
+/* Estilos main */
 /* Estilo básico para el Slider*/
 #gallery {
     width: 80%;
@@ -78,6 +93,60 @@ header a{
 .nav-button:hover {
 background-color: #005f5f;
 }
+
+/* Estilos galeria de productos */
+.container-ofertas, .container-destacados{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.section-titulo{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 75px;
+    font-size: 2em;
+    text-align: center;
+}
+.producto-item{
+    padding: 10px;
+    background-color: #34495E;
+    border-radius: 1.5em;
+}
+.producto-imagen{
+    width: 300px;
+    height: 300px;
+    border-radius: 1em;
+}
+.producto-detalle{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    color: #F1C40F;
+    font-size: 1.5em;
+}
+.producto-precio{
+    align-self: flex-end;
+}
+.boton-agregar{
+    border: 2px solid #E67E22;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-top: 1em;
+    background-color: #E67E22;
+    color: #34495E;
+    font-size: 0.7em;
+    cursor: pointer;
+}
+.boton-agregar:hover{
+    background-color: #34495E;
+    color: #E67E22;
+}
+
+/* Estilos pie de pagina */
 footer{
     display: flex;
     flex-wrap: wrap;

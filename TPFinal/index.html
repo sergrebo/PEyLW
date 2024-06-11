@@ -10,40 +10,42 @@
 <body>
     <!--Ss-->
     <header>
-        <!--Encabezado ¿sirve?-->
-        <div class="container-logo">
-            <a href="#" id="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-route" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F1C40F" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" />
-                    <path d="M9 12v.01" />
-                    <path d="M6 13v.01" />
-                    <path d="M17 15l-4 -4" />
-                    <path d="M13 15l4 -4" />
-                </svg>
-                <span id="logotext">Secret shop</span>
-            </a>
-        </div>
-        
-        <div class="container-login-carrito">
-            <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F1C40F" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                </svg>
-                <span>Login</span>
-            </a>
-            <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F1C40F" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                    <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l14 1l-1 7h-13" />
-                </svg>
-                <span>Carrito</span>
-            </a>
+        <!--Encabezado-->
+        <div class="header-top">
+            <div class="container-logo">
+                <a href="#" id="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-route" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F1C40F" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 7l6 -3l6 3l6 -3v13l-6 3l-6 -3l-6 3v-13" />
+                        <path d="M9 12v.01" />
+                        <path d="M6 13v.01" />
+                        <path d="M17 15l-4 -4" />
+                        <path d="M13 15l4 -4" />
+                    </svg>
+                    <span id="logotext">Secret shop</span>
+                </a>
+            </div>
+            
+            <div class="container-login-carrito">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F1C40F" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    </svg>
+                    <span>Login</span>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F1C40F" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                    </svg>
+                    <span>Carrito</span>
+                </a>
+            </div>
         </div>
         
         <nav>
@@ -75,14 +77,69 @@
             </nav>
         </section>
 
-        <section>
-            <h2>Ofertas</h2>
-        <img src="" alt="">Ofertas
+        <section class="container-ofertas">
+            <h2 class="section-titulo">Ofertas</h2>
+            <div class="producto-item">
+                <img src="img/productos/dado1.png" alt="dado1" class="producto-imagen">
+                <p class="producto-titulo">dado 1</p>
+                <p class="producto-precio">$$$$</p>
+                <button class="boton-agregar">Agregar al carrito</button>
+            </div>
+            <div class="producto-item">
+                <img src="img/productos/dado2.webp" alt="dado2" class="producto-imagen">
+                <p class="producto-titulo">dado 2</p>
+                <p class="producto-precio">$$$$</p>
+                <button class="boton-agregar">Agregar al carrito</button>
+            </div>
+            <div class="producto-item">
+                <img src="img/productos/dado3.webp" alt="dado3" class="producto-imagen">
+                <p class="producto-titulo">dado 3</p>
+                <p class="producto-precio">$$$$</p>
+                <button class="boton-agregar">Agregar al carrito</button>
+            </div>
+            <div class="producto-item">
+                <img src="img/productos/dado4.webp" alt="dado4" class="producto-imagen">
+                <p class="producto-titulo">dado 4</p>
+                <p class="producto-precio">$$$$</p>
+                <button class="boton-agregar">Agregar al carrito</button>
+            </div>
         </section>
 
-        <section>
-            <h2>Destacados</h2>
-        <img src="" alt="">Destacados
+        <section class="container-destacados">
+            <h2 class="section-titulo">Destacados</h2>
+            <div class="producto-item">
+                <img src="img/productos/dado1.png" alt="dado1" class="producto-imagen">
+                <div class="producto-detalle">
+                    <p class="producto-titulo">dado 1</p>
+                    <p class="producto-precio">$$$$</p>
+                    <button class="boton-agregar">Agregar al carrito</button>
+                </div>
+                
+            </div>
+            <div class="producto-item">
+                <img src="img/productos/dado2.webp" alt="dado2" class="producto-imagen">
+                <div class="producto-detalle">
+                    <p class="producto-titulo">dado 2</p>
+                    <p class="producto-precio">$$$$</p>
+                    <button class="boton-agregar">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="img/productos/dado3.webp" alt="dado3" class="producto-imagen">
+                <div class="producto-detalle">
+                    <p class="producto-titulo">dado 3</p>
+                    <p class="producto-precio">$$$$</p>
+                    <button class="boton-agregar">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="img/productos/dado4.webp" alt="dado4" class="producto-imagen">
+                <div class="producto-detalle">
+                    <p class="producto-titulo">dado 4</p>
+                    <p class="producto-precio">$$$$</p>
+                    <button class="boton-agregar">Agregar al carrito</button>
+                </div>
+            </div>
         </section>
         
     </main>
