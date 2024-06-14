@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    
-    <title>Secret shop</title>
+    <title>Login</title>
 </head>
 <body>
-    <!--Ss-->
     <header>
         <!--Encabezado-->
         <div class="header-top">
@@ -27,7 +25,7 @@
             </div>
             
             <div class="container-login-carrito">
-                <a href="login.html">
+                <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F1C40F" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
@@ -55,98 +53,24 @@
     </header>
 
     <main>
-        <!--Contenido principal, carrousel de imagenes, ofertas en carrousel y destacados en carrousel-->
-        <section id="gallery">
-            <div class="gallery-container">
-                <figure class="gallery-item">
-                    <img src="img/carousel-index-5.jpg" alt="Imagen 1">
-                </figure>
-                <figure class="gallery-item">
-                    <img src="img/carousel-index-2.jpg" alt="Imagen 2">
-                </figure>
-                <figure class="gallery-item">
-                    <img src="img/carousel-index-1.jpg" alt="Imagen 3">
-                </figure>
-                <!-- ... otras imágenes ... -->
-            </div>
-            <nav class="gallery-navigation">
-                <button class="nav-button prev-button">Anterior</button>
-                <button class="nav-button next-button">Siguiente</button>
-            </nav>
-        </section>
-
-        <section class="container-ofertas">
-            <h2 class="section-titulo">Ofertas</h2>
-            <div class="producto-item">
-                <img src="img/productos/dado1.png" alt="dado1" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 1</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado2.webp" alt="dado2" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 2</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado3.webp" alt="dado3" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 3</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado4.webp" alt="dado4" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 4</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
+        <h1 class="login-titulo">Inicio de sesión</h1>
+        <section class="section-login">
+            <div class="container-formulario">
+                <form action="">
+                    <div class="item-formulario">
+                        <label for="">Usuario</label><input type="text" name="" id="">
+                    </div>
+                    <div class="item-formulario">
+                        <label for="">Contraseña</label><input type="password" name="" id="">
+                    </div>
+                    <div class="item-formulario">
+                        <button type="submit" id="boton-login">Iniciar sesión</button>
+                    </div>
+                    
+                </form>
             </div>
         </section>
-
-        <section class="container-destacados">
-            <h2 class="section-titulo">Destacados</h2>
-            <div class="producto-item">
-                <img src="img/productos/dado1.png" alt="dado1" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 1</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-                
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado2.webp" alt="dado2" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 2</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado3.webp" alt="dado3" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 3</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado4.webp" alt="dado4" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 4</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-        </section>
+        
         
     </main>
 
@@ -241,6 +165,5 @@
         </div>
         <p id="derechos">Todos los derechos reservados. Emi Rebolledo</p>
     </footer>
-    <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>

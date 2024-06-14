@@ -11,7 +11,6 @@ body{
     font-family: 'Albertus', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F5F5DC;
     background-image: url('../img/wood-background.jpg');
 }
 h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul{
@@ -58,14 +57,14 @@ header nav{
 
 /* Estilos main */
 main{
-    width: 90%;
+    width: 75%;
     background-color: #F5F5DC;
     margin: auto;
     padding-bottom: 3em;
 }
 /* Estilo básico para el Slider*/
 #gallery {
-    width: 95%;
+    width: 80%;
     margin: auto;
     overflow: hidden;
 }
@@ -103,7 +102,7 @@ background-color: #005f5f;
 
 /* Estilos galeria de productos */
 .container-ofertas, .container-destacados{
-    width: 90%;
+    width: 75%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -122,37 +121,37 @@ background-color: #005f5f;
     margin-bottom: 1em;
 }
 .producto-imagen{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 }
 .producto-detalle{
     display: flex;
     flex-direction: column;
     padding: 0.5em;
     color: #F1C40F;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .producto-precio{
     align-self: flex-end;
 }
 .boton-agregar{
-    border: 2px solid #E67E22;
+    border: 3px solid #E67E22;
     padding: 0.5em;
     margin-top: 1em;
     background-color: #E67E22;
-    color: #34495E;
-    font-size: 1rem;
+    color: #2C3E50;
+    font-size: .9rem;
     cursor: pointer;
     font-family: inherit;
 }
 .boton-agregar:hover{
-    background-color: #34495E;
+    background-color: #2C3E50;
     color: #E67E22;
 }
 
 /* Estilos pie de pagina */
 footer{
-    background-color: #34495E;
+    background-color: #2C3E50;
 }
 .footer-container{
     width: 80%;
@@ -160,14 +159,150 @@ footer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: auto;
+    color: #F5F5DC;
+}
+footer div, iframe{
+    padding: 1em 0;
 }
 .footer-item{
-    padding: 2em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
+}
+.footer-item fieldset{
+    display: flex;
+    flex-direction: column;
+}
+.footer-item fieldset input, textarea{
+    margin-bottom: 1em;
+    font-family: 'Albertus', sans-serif;
+}
+.footer-item fieldset button{
+    width: 25%;
+    align-self: flex-end;
+    padding: .25em;
+    border: 2px solid #E67E22;
+    border-radius: 1em;
+    background-color: #E67E22;
+    font-family: 'Albertus', sans-serif;
+    color: #2C3E50;
+}
+.footer-item fieldset button:hover{
+    background-color: #2C3E50;
+    color: #E67E22;
 }
 .item-mid{
     border-right: 2px solid #008CBA;
     border-left: 2px solid #008CBA;
 }
+#derechos{
+    text-align: center;
+    font-size: small;
+    color: #F5F5DC;
+}
 
+
+/** LOGIN **/
+.login-titulo{
+    padding-top: 2.5em;
+    margin-left: 2rem;
+    margin-bottom: 1em;
+}
+.section-login{
+    width: 50%;
+    margin: auto;
+}
+.container-formulario{
+    padding: 1em;
+    background-color: #34495E;
+}
+.container-formulario form{
+    display: flex;
+    flex-direction: column;
+}
+.item-formulario{
+    padding: .5em 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    color:#F5F5DC
+}
+#boton-login{
+    grid-column-end: 3;
+    width: 50%;
+    margin: auto;
+    margin-top: .5em;
+    border: 3px solid #E67E22;
+    background-color: #E67E22;
+    color: #2C3E50;
+    font-family: 'Albertus', sans-serif;
+    padding: .5em;
+    border-radius: 1em;
+}
+#boton-login:hover{
+    background-color: #2C3E50;
+    color:#E67E22;
+}
+
+
+/** PRODUCTO **/
+.section-productos{
+    width: 75%;
+    margin: auto;
+}
+.container-productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+
+/** CARRITO **/
+.carrito-titulo{
+    padding-top: 2.5em;
+}
+.carrito-titulo, .carrito-vacio{
+    margin-left: 2rem;
+}
+.carrito-section{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.lista-atributos{
+    border-bottom: 4px solid #008CBA;
+}
+.carrito-tabla{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: .5em;
+    align-items: center;
+    justify-items: center;
+}
+.carrito-item{
+    background-color: rgba(0, 0, 0 , .2);
+    border-bottom: 2px solid #008CBA;
+}
+.producto-img{
+    max-width: 100%;
+}
+.carrito-total .total-titulo{
+    grid-column-start: 4;
+}
+.comprar-ahora{
+    margin: 3em 0;
+    align-self: flex-end;
+    border: 5px solid #E67E22;
+    border-radius: 2em;
+    background-color: #E67E22;
+    padding: 1em 2em;
+    font-family: 'Albertus', sans-serif;
+    color: #2C3E50;
+    font-size: 1.2rem;
+}
+.comprar-ahora:hover{
+    background-color: #2C3E50;
+    color: #E67E22;
+}

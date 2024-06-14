@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    
-    <title>Secret shop</title>
+    <title>Carrito</title>
 </head>
 <body>
     <!--Ss-->
@@ -25,7 +24,6 @@
                     <span id="logotext">Secret shop</span>
                 </a>
             </div>
-            
             <div class="container-login-carrito">
                 <a href="login.html">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F1C40F" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -55,97 +53,69 @@
     </header>
 
     <main>
-        <!--Contenido principal, carrousel de imagenes, ofertas en carrousel y destacados en carrousel-->
-        <section id="gallery">
-            <div class="gallery-container">
-                <figure class="gallery-item">
-                    <img src="img/carousel-index-5.jpg" alt="Imagen 1">
-                </figure>
-                <figure class="gallery-item">
-                    <img src="img/carousel-index-2.jpg" alt="Imagen 2">
-                </figure>
-                <figure class="gallery-item">
-                    <img src="img/carousel-index-1.jpg" alt="Imagen 3">
-                </figure>
-                <!-- ... otras imágenes ... -->
-            </div>
-            <nav class="gallery-navigation">
-                <button class="nav-button prev-button">Anterior</button>
-                <button class="nav-button next-button">Siguiente</button>
-            </nav>
-        </section>
-
-        <section class="container-ofertas">
-            <h2 class="section-titulo">Ofertas</h2>
-            <div class="producto-item">
-                <img src="img/productos/dado1.png" alt="dado1" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 1</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
+        <h1 class="carrito-titulo">Carrito</h1>
+        <p class="carrito-vacio">Tu carrito esta vacio.</p>
+        <section class="carrito-section">
+            <div class="carrito-lista">
+                <div class="lista-atributos carrito-tabla">
+                    <p class="producto-img">Producto</p>
+                    <p class="producto-titulo">Detalle</p>
+                    <p class="producto-precio-carrito">Precio</p>
+                    <p class="producto-cantidad">Cantidad</p>
+                    <p class="producto-subtotal">Subtotal</p>
+                    <p class="producto-quitar">Quitar</p>
+                </div>
+                <div class="carrito-item carrito-tabla">
+                    <img class="producto-img" src="img/productos/dado1.png" alt="dado 1">
+                    <p class="producto-titulo">Dado 1</p>
+                    <p class="producto-precio-carrito">$$$$</p>
+                    <p class="producto-cantidad">1</p>
+                    <p class="producto-subtotal">$$$$</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 7l16 0" />
+                        <path d="M10 11l0 6" />
+                        <path d="M14 11l0 6" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                </div>
+                <div class="carrito-item carrito-tabla">
+                    <img class="producto-img" src="img/productos/dado2.webp" alt="dado 2">
+                    <p class="producto-titulo">Dado 2</p>
+                    <p class="producto-precio-carrito">$$$$</p>
+                    <p class="producto-cantidad">1</p>
+                    <p class="producto-subtotal">$$$$</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 7l16 0" />
+                        <path d="M10 11l0 6" />
+                        <path d="M14 11l0 6" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                </div>
+                <div class="carrito-item carrito-tabla">
+                    <img class="producto-img" src="img/productos/dado3.webp" alt="dado 3">
+                    <p class="producto-titulo">Dado 3</p>
+                    <p class="producto-precio-carrito">$$$$</p>
+                    <p class="producto-cantidad">1</p>
+                    <p class="producto-subtotal">$$$$</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 7l16 0" />
+                        <path d="M10 11l0 6" />
+                        <path d="M14 11l0 6" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                    </svg>
+                </div>
+                <div class="carrito-total carrito-tabla">
+                    <p class="total total-titulo">TOTAL</p>
+                    <p class="total total-monto">$$$$$$</p>
                 </div>
             </div>
-            <div class="producto-item">
-                <img src="img/productos/dado2.webp" alt="dado2" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 2</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado3.webp" alt="dado3" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 3</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado4.webp" alt="dado4" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 4</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="container-destacados">
-            <h2 class="section-titulo">Destacados</h2>
-            <div class="producto-item">
-                <img src="img/productos/dado1.png" alt="dado1" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 1</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-                
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado2.webp" alt="dado2" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 2</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado3.webp" alt="dado3" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 3</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-item">
-                <img src="img/productos/dado4.webp" alt="dado4" class="producto-imagen">
-                <div class="producto-detalle">
-                    <p class="producto-titulo">dado 4</p>
-                    <p class="producto-precio">$$$$</p>
-                    <button class="boton-agregar">Agregar al carrito</button>
-                </div>
-            </div>
+            <button class="comprar-ahora">Comprar ahora</button>
         </section>
         
     </main>
@@ -241,6 +211,5 @@
         </div>
         <p id="derechos">Todos los derechos reservados. Emi Rebolledo</p>
     </footer>
-    <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
