@@ -65,3 +65,20 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #45a049;
 }
+
+
+
+.error{
+  border: 2px solid red !important;
+}
+.mensaje_error{
+  color: red;
+  margin: 0;
+  margin-bottom: 12px;
+  font-size: .75rem;
+  text-align: end;
+}
+
+.correcto{
+  border: 2px solid green !important;
+}
