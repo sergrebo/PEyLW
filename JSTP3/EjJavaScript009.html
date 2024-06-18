@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto string</title>
+</head>
+<body>
+    <!--Desarrollar una página que pida al usuario que ingrese un mensaje y sea escrito en pantalla en: 
+        Mayúscula. 
+        Minúscula. 
+        Solo el sub-mensaje que comienza el la posición 5 y de largo 10. 
+        Si la palabra hola está incluida dentro del mensaje escribir por pantalla “hola que tal”. 
+        El mismo mensaje pero sin espacios en blanco. Y eliminado la palabra hola. 
+        El mismo mensaje pero traduciendo al ingles las palabras: my por  mi, hello por hola, name por nombre, .... Etc.
+    -->
+    <script type="text/javascript">
+        var cadena, substring, primerIndiceSubstring, ultimoIndiceSubstring
+        substring = 'Hola'
+        cadena = prompt('ingrese un mensaje')
+        document.write(cadena.toUpperCase() + '<br>')
+        document.write(cadena.toLowerCase() + '<br>')
+        document.write(cadena.substring(5, 10) + '<br>')
+
+        primerIndiceSubstring = cadena.indexOf(substring)
+        ultimoIndiceSubstring = cadena.lastIndexOf(substring)
+        console.log(primerIndiceSubstring)
+        console.log(ultimoIndiceSubstring)
+        console.log(substring)
+        console.log(substring.length)
+
+        if (cadena.includes(substring)) {
+            document.write('hola que tal<br>')
+        }
+        if (cadena.includes(substring)) {
+            document.write(cadena.slice(primerIndiceSubstring + substring.length) + '<br>')
+            //document.write(cadena.slice(ultimoIndiceSubstring) + '<br>')
+            document.write(cadena.replace('Hola', '') + '<br>')
+        }
+    </script>
+</body>
+</html>
