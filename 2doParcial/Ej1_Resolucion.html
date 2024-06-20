@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Parcial JS </title>
+    <link href="default.css" rel="stylesheet" type="text/css" />
+
+    <script>
+      //sS
+
+        // COMPLETE ESTA SECCIÓN CON LA RESOLUCION
+
+      function jugar(){
+        //Declaración de variables
+        var ultimaBolilla, tirada, tiraLaura, tiraJorgelina, tiraAlejandra, contadorLaura, contadorAlejandra, contadorJorgelina, ganando
+        
+        //Captura de campos
+        ultimaBolilla = document.getElementById('ultimaBolilla')
+        tiraLaura = document.getElementById('tira-laura').getElementsByClassName('cuadrado')
+        tiraJorgelina = document.getElementById('tira-jorgelina').getElementsByClassName('cuadrado')
+        tiraAlejandra = document.getElementById('tira-alejandra').getElementsByClassName('cuadrado')
+        ganando = document.getElementById('vaGanando')
+
+        
+        //Tirada aleatoria
+        tirada = Math.floor(Math.random() * 100) 
+        
+        ultimaBolilla.textContent = tirada
+
+
+        //Comparaciones
+        buscarBolillaEnTira(tiraLaura, tirada)
+        buscarBolillaEnTira(tiraJorgelina, tirada)
+        buscarBolillaEnTira(tiraAlejandra, tirada)
+
+        cantAciertosLaura = 0
+        cantAciertosJorgelina = 0
+        cantAciertosAlejandra = 0
+
+        contadorLaura = document.getElementById('tira-laura').getElementsByClassName('encontrado')
+        contadorAlejandra = document.getElementById('tira-alejandra').getElementsByClassName('encontrado')
+        contadorJorgelina = document.getElementById('tira-jorgelina').getElementsByClassName('encontrado')
+        
+        cantAciertosLaura = cantAciertosLaura + contadorLaura.length
+        cantAciertosJorgelina = cantAciertosJorgelina + contadorJorgelina.length
+        cantAciertosAlejandra = cantAciertosAlejandra + contadorAlejandra.length
+
+        if (cantAciertosLaura == 10 || cantAciertosAlejandra == 10 || cantAciertosJorgelina == 10) {
+          if (cantAciertosLaura > cantAciertosAlejandra) {
+            if (cantAciertosLaura >= cantAciertosJorgelina) {
+              if (cantAciertosLaura == cantAciertosJorgelina) {
+                ganando.textContent = 'Empate'
+              } else {
+                ganando.textContent = 'Gana Laura'
+              }
+            }
+          } else if (cantAciertosAlejandra > cantAciertosLaura) {
+            if (cantAciertosAlejandra >= cantAciertosJorgelina) {
+              if (cantAciertosAlejandra == cantAciertosJorgelina) {
+                ganando.textContent = 'Empate'
+              } else {
+                ganando.textContent = 'Gana Alejandra'
+              }
+            }
+          } else if (cantAciertosJorgelina > cantAciertosLaura) {
+            if (cantAciertosJorgelina > cantAciertosAlejandra) {
+              ganando.textContent = 'Gana Jorgelina'
+            }
+          }
+        } else {
+          if (cantAciertosLaura > cantAciertosAlejandra) {
+            if (cantAciertosLaura >= cantAciertosJorgelina) {
+              if (cantAciertosLaura == cantAciertosJorgelina) {
+                ganando.textContent = 'Laura y Jorgelina empataron'
+              } else {
+                ganando.textContent = 'Ganó Laura'
+              }
+            }
+          } else if (cantAciertosAlejandra > cantAciertosLaura) {
+            if (cantAciertosAlejandra >= cantAciertosJorgelina) {
+              if (cantAciertosAlejandra == cantAciertosJorgelina) {
+                ganando.textContent = 'Alejandra y Jorgelina empataron'
+              } else {
+                ganando.textContent = 'Ganó Alejandra'
+              }
+            }
+          } else if (cantAciertosJorgelina > cantAciertosLaura) {
+            if (cantAciertosJorgelina > cantAciertosAlejandra) {
+              ganando.textContent = 'Ganó Jorgelina'
+            }
+          }
+        }
+      }
+
+        function buscarBolillaEnTira(tira, numero){
+          var contador = 0
+          for (let i = 0; i < tira.length; i++) {
+            if (tira[i].textContent == numero) {
+              tira[i].className = 'encontrado'
+              console.log('Entro en el if')
+              contador = contador + 1
+            } 
+          }
+          return contador
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo" style="margin-left: 15px">
+            <h1><a href="#">Programación Estática y Laboratorio Web</a></h1>
+            <h2><a href="#">Recuperatorio JS Ejercicio 1</a></h2>
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="Ej1_Consigna.html">Consigna</a></li>
+            <li><a href="Ej1_Resolucion.html">HOJA Ejercicio</a></li>
+        </ul>
+    </div>
+    <div id="content;width: 100%;">
+
+      <table style="width: 60%;margin: auto;" >
+<tr>
+  <td>
+    <div style="text-align: center;">
+      <br><br> 
+    <div class="square" id="ultimaBolilla">0</div>
+  
+    <br/>
+    <button class="button" onclick="jugar()">Jugar</button>      
+
+  </div>
+    <br/>
+    <div id="vaGanando" style="font-size: 48px;background-color: lightgreen; border: 1px solid black;padding: 10px;text-align: center;">
+      Empate
+    </div>
+    <br/><br/>
+  </td>
+
+
+  <td>
+   
+    <div class="tira-container">
+      <div class="titulo">Bingo Laura</div>
+      <div class="tira-numeros" id="tira-laura">
+          <div class="cuadrado">07</div>
+          <div class="cuadrado">22</div>
+          <div class="cuadrado">35</div>
+          <div class="cuadrado">49</div>
+          <div class="cuadrado">58</div>
+          <div class="cuadrado">63</div>
+          <div class="cuadrado">71</div>
+          <div class="cuadrado">85</div>
+          <div class="cuadrado">89</div>
+          <div class="cuadrado">91</div>
+      </div>
+    </div>
+
+    <div class="tira-container">
+      <div class="titulo">Bingo Jorgelina</div>
+      <div class="tira-numeros" id="tira-jorgelina">
+          <div class="cuadrado">05</div>
+          <div class="cuadrado">18</div>
+          <div class="cuadrado">27</div>
+          <div class="cuadrado">35</div>
+          <div class="cuadrado">44</div>
+          <div class="cuadrado">52</div>
+          <div class="cuadrado">69</div>
+          <div class="cuadrado">78</div>
+          <div class="cuadrado">85</div>
+          <div class="cuadrado">91</div>
+      </div>
+  </div>
+
+  <div class="tira-container">
+    <div class="titulo">Bingo Alejandra</div>
+    <div class="tira-numeros" id="tira-alejandra">
+        <div class="cuadrado">02</div>
+        <div class="cuadrado">13</div>
+        <div class="cuadrado">24</div>
+        <div class="cuadrado">39</div>
+        <div class="cuadrado">49</div>
+        <div class="cuadrado">57</div>
+        <div class="cuadrado">66</div>
+        <div class="cuadrado">78</div>
+        <div class="cuadrado">89</div>
+        <div class="cuadrado">91</div>
+    </div>
+  </div>
+
+
+
+  </td>
+</tr>
+</table>
+
+
+
+
+    </div>
+    <div id="footer" style="margin-top: 240px;">
+        <p id="legal">Copyright &copy; AtomoHost. All Rights Reserved.
+            Designed by <a href="http://www.freecsstemplates.org/">Free CSS
+                Templates</a>.</p>
+        <p id="links"><a href="#">Privacy Policy</a> | <a href="#">Terms
+                of Use</a></p>
+    </div>
+    <br />
+    <br />
+</body>
+
+</html>
