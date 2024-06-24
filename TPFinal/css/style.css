@@ -61,6 +61,7 @@ main{
     background-color: #F5F5DC;
     margin: auto;
     padding-bottom: 3em;
+    padding-top: 4.5em;
 }
 /* Estilo básico para el Slider*/
 #gallery {
@@ -204,7 +205,7 @@ footer div, iframe{
 
 /** LOGIN **/
 .login-titulo{
-    padding-top: 2.5em;
+    
     margin-left: 2rem;
     margin-bottom: 1em;
 }
@@ -260,7 +261,7 @@ footer div, iframe{
 
 /** CARRITO **/
 .carrito-titulo{
-    padding-top: 2.5em;
+    
 }
 .carrito-titulo, .carrito-vacio{
     margin-left: 2rem;

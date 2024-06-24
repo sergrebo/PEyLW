@@ -39,7 +39,47 @@ const productos = [
             id: "dados"
         },
         precio: 1000,
-    }
+    },
+    {
+        id: "juego-01",
+        titulo: "Colonos de Catan",
+        imagen: "./img/productos/juegos_de_mesa/Catan/1.webp",
+        categoria: {
+            nombre: "Juegos de mesa",
+            id: "JuegosDeMesa"
+        },
+        precio: 10000,
+    },
+    {
+        id: "juego-02",
+        titulo: "Dune Imperium",
+        imagen: "./img/productos/juegos_de_mesa/DuneImperium/1.jpg",
+        categoria: {
+            nombre: "Juegos de mesa",
+            id: "JuegosDeMesa"
+        },
+        precio: 10000,
+    },
+    {
+        id: "juego-03",
+        titulo: "Gloomhaven",
+        imagen: "./img/productos/juegos_de_mesa/Gloomhaven/1.webp",
+        categoria: {
+            nombre: "Juegos de mesa",
+            id: "JuegosDeMesa"
+        },
+        precio: 10000,
+    },
+    {
+        id: "juego-04",
+        titulo: "TEG La Revancha",
+        imagen: "./img/productos/juegos_de_mesa/TEG/2.webp",
+        categoria: {
+            nombre: "Juegos de mesa",
+            id: "JuegosDeMesa"
+        },
+        precio: 10000,
+    },
 ]
 
 //DOM
