@@ -46,7 +46,7 @@ const productos = [
         imagen: "./img/productos/juegos_de_mesa/Catan/1.webp",
         categoria: {
             nombre: "Juegos de mesa",
-            id: "JuegosDeMesa"
+            id: "juegosDeMesa"
         },
         precio: 10000,
     },
@@ -56,7 +56,7 @@ const productos = [
         imagen: "./img/productos/juegos_de_mesa/DuneImperium/1.jpg",
         categoria: {
             nombre: "Juegos de mesa",
-            id: "JuegosDeMesa"
+            id: "juegosDeMesa"
         },
         precio: 10000,
     },
@@ -66,7 +66,7 @@ const productos = [
         imagen: "./img/productos/juegos_de_mesa/Gloomhaven/1.webp",
         categoria: {
             nombre: "Juegos de mesa",
-            id: "JuegosDeMesa"
+            id: "juegosDeMesa"
         },
         precio: 10000,
     },
@@ -76,7 +76,7 @@ const productos = [
         imagen: "./img/productos/juegos_de_mesa/TEG/2.webp",
         categoria: {
             nombre: "Juegos de mesa",
-            id: "JuegosDeMesa"
+            id: "juegosDeMesa"
         },
         precio: 10000,
     },
@@ -84,12 +84,18 @@ const productos = [
 
 //DOM
 const contenerdorProductos = document.getElementById('contenedor-productos')
+//const botonesFiltro = document.getElementsByClassName('boton-filtro')                     getElementsByClassName devuelve una colección de elementos (HTMLCollection), no un arreglo. Para usar forEach, necesitas convertirlo a un arreglo. Otra forma es usar el método querySelectorAll, que devuelve una NodeList que es iterable
+const botonesFiltro = document.querySelectorAll('.boton-filtro')
+const tituloPrincipal = document.getElementById('titulo-principal')
+
 
 
 //Funciones ?
-function cargarProductos(){
+function cargarProductos(seleccionProductos){
 
-    productos.forEach(producto => {
+    contenerdorProductos.innerHTML = ""
+
+    seleccionProductos.forEach(producto => {
         const div = document.createElement('div');
         div.className = 'producto-item'
         div.innerHTML = `
@@ -104,4 +110,23 @@ function cargarProductos(){
     })
 }
 
-cargarProductos()
+cargarProductos(productos)
+
+
+botonesFiltro.forEach(boton => {
+    boton.addEventListener('click', (e) => {
+
+        if (e.currentTarget.id != "todos") {
+            const productosFiltrados = productos.filter(producto => producto.categoria.id === e.currentTarget.id)
+            cargarProductos(productosFiltrados)
+            productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id)
+            tituloPrincipal.innerText = productoCategoria.categoria.nombre
+        } else {
+            cargarProductos(productos)
+            tituloPrincipal.innerText = "Todos los productos"
+        }
+
+        
+
+    })
+})

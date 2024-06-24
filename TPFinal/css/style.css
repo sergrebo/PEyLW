@@ -62,6 +62,7 @@ main{
     margin: auto;
     padding-bottom: 3em;
     padding-top: 4.5em;
+    
 }
 /* Estilo básico para el Slider*/
 #gallery {
@@ -140,7 +141,7 @@ background-color: #005f5f;
     padding: 0.5em;
     margin-top: 1em;
     background-color: #E67E22;
-    color: #2C3E50;
+    
     font-size: .9rem;
     cursor: pointer;
     font-family: inherit;
@@ -206,7 +207,7 @@ footer div, iframe{
 /** LOGIN **/
 .login-titulo{
     
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-bottom: 1em;
 }
 .section-login{
@@ -245,7 +246,38 @@ footer div, iframe{
 }
 
 
-/** PRODUCTO **/
+/** PRODUCTOs **/
+.contenedor{
+    display: flex;
+    flex-direction: row;
+}
+#titulo-principal{
+    margin-left: 3rem;
+    margin-bottom: 1em;
+}
+#filtros{
+    position: sticky;
+    margin-top: 6em;
+    left: 10em;
+    padding: 0 2em;
+    background-color:#2C3E50;
+    height: fit-content;
+    top: 100px;
+}
+#filtros li{
+    margin: 2em 0;
+    list-style: none;
+    color: white;
+}
+.boton-filtro{
+    border: 0;
+    font-size: 1.2em;
+    font-family: 'Albertus', sans-serif;
+    width: 100%;
+    background-color:#E67E22;
+    padding: 0.25em;
+    cursor: pointer;
+}
 .section-productos{
     width: 75%;
     margin: auto;
@@ -264,7 +296,7 @@ footer div, iframe{
     
 }
 .carrito-titulo, .carrito-vacio{
-    margin-left: 2rem;
+    margin-left: 3rem;
 }
 .carrito-section{
     width: 75%;
