@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Carrito</title>
+    
 </head>
 <body>
     <!--Ss-->
@@ -54,9 +55,9 @@
 
     <main>
         <h1 class="carrito-titulo">Carrito</h1>
-        <p class="carrito-vacio">Tu carrito esta vacio.</p>
-        <section class="carrito-section">
-            <div class="carrito-lista">
+        <p id="carrito-vacio" class="carrito-vacio">Tu carrito esta vacio.</p>
+        <section id="carrito-section" class="carrito-section deshabilitado">
+            <div id="carrito-lista" class="carrito-lista">
                 <div class="lista-atributos carrito-tabla">
                     <p class="producto-img">Producto</p>
                     <p class="producto-titulo">Detalle</p>
@@ -71,7 +72,7 @@
                     <p class="producto-precio-carrito">$$$$</p>
                     <p class="producto-cantidad">1</p>
                     <p class="producto-subtotal">$$$$</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="darkred" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M4 7l16 0" />
                         <path d="M10 11l0 6" />
@@ -86,7 +87,7 @@
                     <p class="producto-precio-carrito">$$$$</p>
                     <p class="producto-cantidad">1</p>
                     <p class="producto-subtotal">$$$$</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="darkred" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M4 7l16 0" />
                         <path d="M10 11l0 6" />
@@ -101,7 +102,7 @@
                     <p class="producto-precio-carrito">$$$$</p>
                     <p class="producto-cantidad">1</p>
                     <p class="producto-subtotal">$$$$</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="producto-quitar icon icon-tabler icon-tabler-trash" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="darkred" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M4 7l16 0" />
                         <path d="M10 11l0 6" />
@@ -110,14 +111,24 @@
                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                     </svg>
                 </div>
-                <div class="carrito-total carrito-tabla">
-                    <p class="total total-titulo">TOTAL</p>
-                    <p class="total total-monto">$$$$$$</p>
-                </div>
             </div>
-            <button class="comprar-ahora">Comprar ahora</button>
+            <div id="carrito-botones" class="carrito-botones">
+                <div class="botones-izquierda">
+                    <button class="carrito-boton">Vaciar carrito</button>
+                    <button class="carrito-boton">Seguir comprando</button>
+                </div>
+                <div class="botones-derecha">
+                    <div class="botones-derecha-total">
+                        <p>Total</p>
+                        <p id="total">$$$$$$$</p>
+                    </div>
+                    <button class="carrito-boton">Comprar ahora</button>
+                </div>
+                
+            </div>
+            
         </section>
-        
+        <p id="carrito-comprado" class="carrito-comprado deshabilitado">Muchas gracias por su compra</p>
     </main>
 
     <footer>
@@ -211,5 +222,6 @@
         </div>
         <p id="derechos">Todos los derechos reservados. Emi Rebolledo</p>
     </footer>
+    <script src="js/carrito.js"></script>
 </body>
 </html>

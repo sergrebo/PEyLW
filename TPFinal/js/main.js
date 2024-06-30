@@ -87,6 +87,8 @@ const contenerdorProductos = document.getElementById('contenedor-productos')
 //const botonesFiltro = document.getElementsByClassName('boton-filtro')                     getElementsByClassName devuelve una colección de elementos (HTMLCollection), no un arreglo. Para usar forEach, necesitas convertirlo a un arreglo. Otra forma es usar el método querySelectorAll, que devuelve una NodeList que es iterable
 const botonesFiltro = document.querySelectorAll('.boton-filtro')
 const tituloPrincipal = document.getElementById('titulo-principal')
+let botonesAgregar = document.querySelectorAll('.boton-agregar')                            //let y no const porque despues vamos a querer modificar el arreglo. Los botones solo van a existir luego de la ejecucion de cargarProductos()
+const numeroProductos = document.querySelector('#numeroProductos')
 
 
 
@@ -108,6 +110,9 @@ function cargarProductos(seleccionProductos){
         `
         contenerdorProductos.append(div)
     })
+
+    actualizarBotonesAgregar()
+    
 }
 
 cargarProductos(productos)
@@ -120,13 +125,43 @@ botonesFiltro.forEach(boton => {
             const productosFiltrados = productos.filter(producto => producto.categoria.id === e.currentTarget.id)
             cargarProductos(productosFiltrados)
             productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id)
+            //find retorna el primer elemento que coincida con la condicion especificada dentro
             tituloPrincipal.innerText = productoCategoria.categoria.nombre
         } else {
             cargarProductos(productos)
             tituloPrincipal.innerText = "Todos los productos"
         }
-
-        
-
     })
 })
+
+function actualizarBotonesAgregar() {
+    botonesAgregar = document.querySelectorAll('.boton-agregar') 
+    botonesAgregar.forEach(boton =>{
+        boton.addEventListener('click', agregarAlCarrito)
+    })
+}
+
+const productosEnCarrito = []
+
+function agregarAlCarrito(e) {
+    const idBoton = e.currentTarget.id
+    const productoAgregado = productos.find(producto => producto.id === idBoton)
+
+    if (productosEnCarrito.some(producto => producto.id === idBoton)) {                     //some retorna true si el producto por agregarse en el arreglo productosEnCarrito ya esta en el mismo.
+        const indice = productosEnCarrito.findIndex(producto => producto.id === idBoton)    //findIndex retorna el indice dentro de productosEn carrito del producto que estamos agregando pero que ya existe dentro del arreglo.
+        productosEnCarrito[indice].cantidad++                                               //aumenta en 1 la propiedad "cantidad" del producto especificado por el indice
+    } else {
+        productoAgregado.cantidad = 1                                                       //agrega a productoAgregado la propiedad "cantidad" con valor 1, pues es la primera unidad agregada del producto al carrito.
+        productosEnCarrito.push(productoAgregado)
+    }
+    actualizarNumeroProductos()
+
+    localStorage.setItem('productos-en-carrito', JSON.stringify(productosEnCarrito))
+}
+
+
+
+function actualizarNumeroProductos() {
+    let nuevoNumeroProductos = productosEnCarrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0)
+    numeroProductos.innerText = nuevoNumeroProductos
+}
