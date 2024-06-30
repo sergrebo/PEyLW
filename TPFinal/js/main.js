@@ -141,7 +141,16 @@ function actualizarBotonesAgregar() {
     })
 }
 
-const productosEnCarrito = []
+let productosEnCarrito
+
+const productosEnCarritoLS = JSON.parse(localStorage.getItem('productos-en-carrito'))
+
+if (productosEnCarritoLS) {                                                                 //En caso que queramos seguir comprando luego de visitar el carrito, al recargar la tienda debo tener en cuenta el arreglo que ya esta en el localstorage, sino habria incongruencia entre lo que muestra la interfaz y lo que esta en el carrito
+    productosEnCarrito = productosEnCarritoLS
+    actualizarNumeroProductos()
+} else {
+    productosEnCarrito = []
+}
 
 function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id

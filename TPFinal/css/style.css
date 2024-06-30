@@ -329,33 +329,45 @@ footer div, iframe{
 .producto-quitar{
     cursor: pointer;
 }
-.carrito-total .total-titulo{
-    grid-column-start: 4;
-    font-size: 1.25rem;
-}
 .carrito-botones{
+    margin: 2.5em 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .botones-izquierda{
-    justify-content: start;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
 }
 .botones-derecha{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    width: 50%;
+    align-items: center;
+    background-color: rgba(0, 0, 0 , .2);
+    border-radius: 2em;
+}
+.carrito-total{
+    display: flex;
+    margin: 0 1em;
+    gap: .25em;
 }
 .carrito-boton{
-    margin: 2.5em 0;
     border: 5px solid #E67E22;
     border-radius: 2em;
     background-color: #E67E22;
     padding: .25em 1em;
     font-family: 'Albertus', sans-serif;
     color: #2C3E50;
-    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.carrito-boton a{
+    text-decoration: none;
+    color: #34495E
+}
+.carrito-boton a:hover{
+    color: #E67E22;
 }
 .carrito-boton:hover{
     background-color: #2C3E50;
