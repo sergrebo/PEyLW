@@ -84,7 +84,8 @@ const productos = [
 
 //DOM
 const contenerdorProductos = document.getElementById('contenedor-productos')
-//const botonesFiltro = document.getElementsByClassName('boton-filtro')                     getElementsByClassName devuelve una colección de elementos (HTMLCollection), no un arreglo. Para usar forEach, necesitas convertirlo a un arreglo. Otra forma es usar el método querySelectorAll, que devuelve una NodeList que es iterable
+//const botonesFiltro = document.getElementsByClassName('boton-filtro')                     
+//getElementsByClassName devuelve una colección de elementos (HTMLCollection), no un arreglo. Otra forma es usar el método querySelectorAll, que devuelve una NodeList que es iterable con foreach
 const botonesFiltro = document.querySelectorAll('.boton-filtro')
 const tituloPrincipal = document.getElementById('titulo-principal')
 let botonesAgregar = document.querySelectorAll('.boton-agregar')                            //let y no const porque despues vamos a querer modificar el arreglo. Los botones solo van a existir luego de la ejecucion de cargarProductos()
@@ -92,7 +93,7 @@ const numeroProductos = document.querySelector('#numeroProductos')
 
 
 
-//Funciones ?
+//FUNCIONES
 function cargarProductos(seleccionProductos){
 
     contenerdorProductos.innerHTML = ""
@@ -110,13 +111,11 @@ function cargarProductos(seleccionProductos){
         `
         contenerdorProductos.append(div)
     })
-
     actualizarBotonesAgregar()
     
 }
 
 cargarProductos(productos)
-
 
 botonesFiltro.forEach(boton => {
     boton.addEventListener('click', (e) => {

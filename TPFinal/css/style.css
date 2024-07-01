@@ -324,9 +324,11 @@ footer div, iframe{
     font-size: 1.25rem;
 }
 .producto-img{
-    max-width: 100%;
+    max-width: 8rem;
 }
-.producto-quitar{
+.producto-eliminar{
+    border: 0;
+    background-color: transparent;
     cursor: pointer;
 }
 .carrito-botones{
