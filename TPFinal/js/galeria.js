@@ -13,7 +13,7 @@ function navigate(direction) {
     const totalImages = document.querySelectorAll('.gallery-item').length;
 
     currentIndex = (currentIndex + direction + totalImages) % totalImages;
-   const offset = -currentIndex * 100;
+    const offset = -currentIndex * 100;
 
     galleryContainer.style.transform = `translateX(${offset}%)`;
 }
