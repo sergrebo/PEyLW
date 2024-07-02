@@ -46,16 +46,21 @@ function validar()
     }
 
     //Validación de fecha
-    if (!dia.value.trim()) {
-        valida_error(dia, 'Campo día vacío.')
-    } else if (isNaN(dia.value)) {
-        valida_error(dia, 'Campo día no es un número.')
-    } else if (dia.value<1) {
-        valida_error(dia, 'Campo día debe tener un número positivo')
-    } else if (!valida_entero(dia)) {
-        valida_error(dia, 'Campo día debe tener un número entero')
+    var fechaActual = new Date()
+    var anioActual = fechaActual.getFullYear()
+
+    if (!anio.value.trim()){
+        valida_error(anio, 'Campo año vacío')
+    } else if (isNaN(anio.value)) {
+        valida_error(anio, 'Campo año no es un número.')
+    } else if (anio.value<1) {
+        valida_error(anio, 'Campo año debe tener un número mayor a cero')
+    } else if (!valida_entero(anio)) {
+        valida_error(anio, 'Campo año debe tener un número entero')
+    } else if (anio.value > anioActual) {
+        valida_error(anio, 'Campo año superior al año actual')
     } else {
-        valida_correcto(dia)
+        valida_correcto(anio)
     }
 
     if (!mes.value.trim()){
@@ -66,23 +71,29 @@ function validar()
         valida_error(mes, 'Campo mes debe tener un número positivo')
     } else if (!valida_entero(mes)) {
         valida_error(mes, 'Campo mes debe tener un número entero')
+    } else if (mes.value>12) {
+        valida_error(mes, 'Campo mes superior a 12')
     } else {
         valida_correcto(mes)
     }
 
-    if (!anio.value.trim()){
-        valida_error(anio, 'Campo año vacío')
-    } else if (isNaN(anio.value)) {
-        valida_error(anio, 'Campo año no es un número.')
-    } else if (anio.value<1) {
-        valida_error(anio, 'Campo año debe tener un número positivo')
-    } else if (!valida_entero(anio)) {
-        valida_error(anio, 'Campo año debe tener un número entero')
+    if (!dia.value.trim()) {
+        valida_error(dia, 'Campo día vacío.')
+    } else if (isNaN(dia.value)) {
+        valida_error(dia, 'Campo día no es un número.')
+    } else if (dia.value<1) {
+        valida_error(dia, 'Campo día debe tener un número positivo')
+    } else if (!valida_entero(dia)) {
+        valida_error(dia, 'Campo día debe tener un número entero')
+    } else if (dia.value > 31) {
+        valida_error(dia, 'Campo día demasiado alto')
     } else {
-        valida_correcto(anio)
+        valida_correcto(dia)
     }
 
-    
+    verificarFecha(dia, mes, anio)
+
+
 }
 
 
@@ -112,6 +123,40 @@ function valida_email(email){
 }
 
 
-function valida_entero(numero){
-    return Number.isInteger(numero)
+function valida_entero(numero){ 
+    numeroValor = numero.value
+    respuesta = /^[1-9]\d*$/.test(numeroValor)
+    return respuesta
+}
+
+function verificarFecha(dia, mes, anio){
+    var diaValor = dia.value
+    var mesValor = mes.value
+    var anioValor = anio.value
+
+    if (mesValor == 1 || mesValor == 3 || mesValor == 5 || mesValor == 7 || mesValor == 8 || mesValor == 10 || mesValor == 12){
+        if (diaValor > 31) {
+            valida_error(dia, 'El campo día es mayor al número de días del mes (31)')
+        } else {
+            valida_correcto(dia)
+        }
+    } else if (mesValor == 4 || mesValor == 6 || mesValor == 9 || mesValor == 11) {
+        if (diaValor > 30) {
+            valida_error(dia, 'El campo día es mayor al número de días del mes (30)')
+        } else {
+            valida_correcto(dia)
+        }
+    } else if (mesValor == 2) {
+        if ((anioValor % 4 == 0) && (!(anioValor % 100 == 0) || (anioValor % 400 == 0))) {
+            if (diaValor > 29) {
+                valida_error(dia, 'El campo día es mayor al número de días del mes (29 pues '+anioValor+' es bisiesto)')
+            } else {
+                valida_correcto(dia)
+            }
+        } else if (diaValor > 28) {
+            valida_error(dia, 'El campo día es mayor al número de días del mes (28)')
+        } else {
+            valida_correcto(dia)
+        }
+    }
 }
