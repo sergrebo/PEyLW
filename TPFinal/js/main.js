@@ -73,7 +73,7 @@ const productos = [
     {
         id: "juego-04",
         titulo: "TEG La Revancha",
-        imagen: "./img/productos/juegos_de_mesa/TEG/2.webp",
+        imagen: "./img/productos/juegos_de_mesa/TEG/1.webp",
         categoria: {
             nombre: "Juegos de mesa",
             id: "juegosDeMesa"

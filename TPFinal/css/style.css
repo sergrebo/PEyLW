@@ -40,15 +40,40 @@ header nav{
     justify-content: space-around;
 }
 .container-logo{
-    width: 70%;
+    width: 60%;
 }
 .container-login-carrito{
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: space-around;
 }
 .container-login-carrito a{
     display: flex;
+    align-items: center;
+}
+.container-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    align-items: center;
+}
+.boton-desloguear{
+    background-color:#E67E22;
+    border: 2px solid #E67E22;
+    color: #2C3E50;
+    font-family: 'Albertus', sans-serif;
+    border-radius: 1rem;
+    padding: .1rem .5rem;
+}
+.boton-desloguear:hover{
+    background-color: #2C3E50;
+    color: #E67E22;
+}
+.container-carrito-index{
+    display: flex;
+    justify-content: center;
+    width: 50%;
     align-items: center;
 }
 #numeroProductos{
@@ -69,7 +94,7 @@ main{
     margin: auto;
     padding-bottom: 3em;
     padding-top: 4.5em;
-    
+    min-height: 45vh;
 }
 /* Estilo básico para el Slider*/
 #gallery {
@@ -170,13 +195,43 @@ footer{
     margin: auto;
     color: #F5F5DC;
 }
-footer div, iframe{
-    padding: 1em 0;
+.footer-item-container{
+    width: 80%;
+    margin: 0 auto;
+}
+.container-ubicacion{
+    margin-bottom: .75rem;
+}
+.footer-iframe{
+    margin: auto;
 }
 .footer-item{
     padding: 1em;
     display: flex;
     flex-direction: column;
+}
+.container-telefonos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: .75rem
+}
+.telefono-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5em;
+}
+.rrss-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: .75rem
+}
+.footer-form-container{
+    margin-bottom: .75rem;
 }
 .footer-item fieldset{
     display: flex;
@@ -213,17 +268,17 @@ footer div, iframe{
 
 /** LOGIN **/
 .login-titulo{
-    
     margin-left: 3rem;
     margin-bottom: 1em;
 }
 .section-login{
-    width: 50%;
+    width: 40%;
     margin: auto;
 }
 .container-formulario{
     padding: 1em;
     background-color: #34495E;
+    margin-bottom: .75rem;
 }
 .container-formulario form{
     display: flex;
@@ -250,6 +305,18 @@ footer div, iframe{
 #boton-login:hover{
     background-color: #2C3E50;
     color:#E67E22;
+}
+.login-registro{
+    margin-top: 1rem;
+    color: #F1C40F;
+    text-align: end;
+    font-size: small;
+}
+.error-registro{
+    padding: 1rem;
+    margin: auto;
+    border: 2px solid red;
+    width: fit-content;
 }
 
 
@@ -375,6 +442,20 @@ footer div, iframe{
     background-color: #2C3E50;
     color: #E67E22;
 }
+
+
 .deshabilitado{
     display: none;
+}
+.error-container{
+    background-color: #F5F5DC;
+}
+.nodo-error{
+    border: 2px solid red;
+}
+.nodo-correcto{
+    border: 2px solid green;
+}
+.parrafo-error{
+    color: red;
 }
