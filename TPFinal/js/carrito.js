@@ -2,6 +2,11 @@
 let productosEnCarrito = localStorage.getItem('productos-en-carrito')
 productosEnCarrito = JSON.parse(productosEnCarrito)
 
+
+const usuario = JSON.parse(localStorage.getItem('acceso_exitoso')) || false
+
+
+
 //DOM
 const carritoVacio = document.querySelector('#carrito-vacio')
 const carritoSection = document.querySelector('#carrito-section')
@@ -12,10 +17,14 @@ const botonVaciar = document.querySelector('#boton-vaciar')
 const total = document.querySelector('#total')
 const botonComprar = document.querySelector('#boton-comprar')
 
+const loginSpan = document.querySelector('#header-login-span')
+const botonDesloguear = document.querySelector('#boton-desloguear')
+const enlaceALogin = document.querySelector('#enlace-a-login')
+
 //FUNCIONES
 function cargarProductosCarrito(){
     if (productosEnCarrito && productosEnCarrito.length > 0) {
-        //Si productosEnCarrito no tiene contenido se evalua false. Si eliminamos todos los productos en el carrito, productosEnCarrito queda como un arreglo sin elementos, entonces, para mostrar que esta vacio, agregamos el argumento length
+        //Si productosEnCarrito no tiene contenido se evalua false. Si eliminamos todos los productos en el carrito, productosEnCarrito queda como un arreglo sin elementos, entonces, para mostrar que esta vacio, agregamos la propiedad length
 
         carritoVacio.classList.add('deshabilitado')                 //classList.add agrega una clase al objeto seleccionado
         carritoSection.classList.remove('deshabilitado')            //classList.remove, en cambio, la elimina
@@ -104,12 +113,42 @@ function actualizarTotal(){
 
 botonComprar.addEventListener('click', comprarCarrito)
 
-function comprarCarrito(e){
-    productosEnCarrito.length = 0
-    localStorage.setItem('productos-en-carrito', JSON.stringify(productosEnCarrito))
-    cargarProductosCarrito()
+function comprarCarrito(){
+    if(usuario){
+        productosEnCarrito.length = 0
+        localStorage.setItem('productos-en-carrito', JSON.stringify(productosEnCarrito))
+        cargarProductosCarrito()
 
-    carritoVacio.classList.add('deshabilitado')
-    carritoSection.classList.add('deshabilitado')
-    carritoComprado.classList.remove('deshabilitado')
+        carritoVacio.classList.add('deshabilitado')
+        carritoSection.classList.add('deshabilitado')
+        carritoComprado.classList.remove('deshabilitado')
+    } else {
+        alert('Para finalizar la compra debe iniciar sesión')
+        open('./login.html')
+        close()
+    }
+    
 }
+
+
+function cargarUsuario(usuario){
+    //Cargar la información del usuario si esta logueado. En ese caso, se deshabilita el enlace a Login
+    if (usuario) {
+        loginSpan.textContent = `Hola ${usuario.nombreUsuario}`
+        botonDesloguear.classList.remove('deshabilitado')
+        enlaceALogin.removeAttribute('href')
+    }
+}
+
+cargarUsuario(usuario)
+
+//Cerrar sesión y rehabilitacion del enlace a Login
+botonDesloguear.addEventListener('click', () => {
+    alert('Gracias por su visita')
+    localStorage.removeItem('acceso_exitoso')
+    botonDesloguear.classList.add('deshabilitado')
+    loginSpan.textContent = 'Login'
+    enlaceALogin.setAttribute('href', 'login.html')
+    open('./carrito.html')
+    close()
+})

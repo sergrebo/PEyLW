@@ -91,6 +91,13 @@ const tituloPrincipal = document.getElementById('titulo-principal')
 let botonesAgregar = document.querySelectorAll('.boton-agregar')                            //let y no const porque despues vamos a querer modificar el arreglo. Los botones solo van a existir luego de la ejecucion de cargarProductos()
 const numeroProductos = document.querySelector('#numeroProductos')
 
+const loginSpan = document.querySelector('#header-login-span')
+const botonDesloguear = document.querySelector('#boton-desloguear')
+const enlaceALogin = document.querySelector('#enlace-a-login')
+
+//LocalStorage
+const usuario = JSON.parse(localStorage.getItem('acceso_exitoso')) || false
+
 
 
 //FUNCIONES
@@ -168,8 +175,28 @@ function agregarAlCarrito(e) {
 }
 
 
-
 function actualizarNumeroProductos() {
     let nuevoNumeroProductos = productosEnCarrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0)
     numeroProductos.innerText = nuevoNumeroProductos
 }
+
+
+function cargarUsuario(usuario){
+    //Cargar la información del usuario si esta logueado. En ese caso, se deshabilita el enlace a Login
+    if (usuario) {
+        loginSpan.textContent = `Hola ${usuario.nombreUsuario}`
+        botonDesloguear.classList.remove('deshabilitado')
+        enlaceALogin.removeAttribute('href')
+    }
+}
+
+cargarUsuario(usuario)
+
+//Cerrar sesión y rehabilitacion del enlace a Login
+botonDesloguear.addEventListener('click', () => {
+    alert('Gracias por su visita')
+    localStorage.removeItem('acceso_exitoso')
+    botonDesloguear.classList.add('deshabilitado')
+    loginSpan.textContent = 'Login'
+    enlaceALogin.setAttribute('href', 'login.html')
+})

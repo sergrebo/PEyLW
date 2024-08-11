@@ -65,6 +65,7 @@ header nav{
     font-family: 'Albertus', sans-serif;
     border-radius: 1rem;
     padding: .1rem .5rem;
+    cursor: pointer;
 }
 .boton-desloguear:hover{
     background-color: #2C3E50;
@@ -311,6 +312,14 @@ footer{
     color: #F1C40F;
     text-align: end;
     font-size: small;
+}
+.enlace-registro{
+    color: #008CBA;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.enlace-registro:hover{
+    color: #E67E22;
 }
 .error-registro{
     padding: 1rem;
